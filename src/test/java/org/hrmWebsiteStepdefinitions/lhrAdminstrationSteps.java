@@ -47,4 +47,8 @@ public class lhrAdminstrationSteps {
     public void userNavigatesToTrainnigpage() {
         hrpage.navigateToTraining();
     }
+    @Then("user navigates to excel")
+    public void userNavigatesToExcel(){
+
+    }
 }
