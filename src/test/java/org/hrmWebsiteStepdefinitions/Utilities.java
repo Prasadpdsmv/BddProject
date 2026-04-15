@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class utilities {
+public class Utilities {
 
     public void gettConnection() throws FileNotFoundException, ClassNotFoundException, SQLException {
 

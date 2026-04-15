@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
         features = "src/test/resources/Features",
         glue = {"org.hrmWebsiteStepdefinitions",   // predefined step definitions package
         },
-        tags="@test2"
+        tags="@test12"
 
 )
 @Test

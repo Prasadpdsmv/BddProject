@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class hrpageObjects {
 
     WebDriver driver;
@@ -30,11 +32,11 @@ public class hrpageObjects {
     @FindBy(how = How.XPATH, using = "")
     WebElement Company;
 
-    @FindBy(how = How.XPATH, using = "//li[contains(text(),'People Management')]")
+    @FindBy(how = How.XPATH, using = "//div[@class=\"row right-menu\"]//a[contains(text(),'People Management')]")
    // @FindBy(how = How.XPATH, using = "//div[@class=\"menu-title-row-view-platform\"]/parent::li/div[1]")
     WebElement PeopleManagement;
 
-    @FindBy(how = How.XPATH, using = "//h6[@class=\"list-sub-menu-title\"]/a[contains(text(),'HR Administration')]")
+    @FindBy(how = How.XPATH, using = "//div[@class=\"row right-menu\"]//a[contains(text(),'HR Administration')]")
     WebElement HRAdministration;
     @FindBy(how = How.XPATH, using = "//button[@class=\"btn btn-ohrm\"]")
     WebElement bookAdemoButton;
@@ -50,10 +52,13 @@ public class hrpageObjects {
             WebElement starter;
     //WebElement starter=driver.findElement(By.xpath("//*[@class=\"extra-menu-title\"]//a[.='STARTER (Open-Source)']"));
 
-    @FindBy(how = How.XPATH, using = "//h6[@class=\"list-sub-menu-title\"]/a[ contains(text(), 'Performance Management')]")
+    @FindBy(how = How.XPATH, using = "//div[@class=\"row sub-module-menu\"]//a[ contains(text(), 'Performance Management')]")
             WebElement PerformanceManagement;
     @FindBy(how = How.XPATH, using = "//h6[@class=\"list-sub-menu-title\"]/a[ contains(text(), 'Training')]")
     WebElement Training;
+    @FindBy(how = How.XPATH, using="//button[@id=\"CybotCookiebotBannerCloseButtonE2E\"]")
+    WebElement CLOSE_COOCKIESPOPUP;
+
 
     Actions act;
     public void mouseHoverSolutions(){
@@ -77,8 +82,8 @@ public class hrpageObjects {
 
 
 
-        act.moveToElement(starter).build().perform();
-        act.moveToElement(PeopleManagement, 190,170);
+       // act.moveToElement(starter).build().perform();
+        //act.moveToElement(PeopleManagement, 190,170);
         HRAdministration.click();
     }
     public boolean
@@ -87,8 +92,12 @@ public class hrpageObjects {
        // return true;
     }
     public void openHomePage(){
-        driver.manage().window().maximize();
         driver.get("https://www.orangehrm.com/");
+        WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(CLOSE_COOCKIESPOPUP));
+
+        closeCoockiesPopup();
+
     }
     public void navigateToOnboarding(){
         act=new Actions(driver);
@@ -99,17 +108,24 @@ public class hrpageObjects {
 
     public void navigateToPerformanceManagement(){
         act=new Actions(driver);
-        act.moveToElement(starter).build().perform();
+       // act.moveToElement(starter).build().perform();
         act.moveToElement(PerformanceManagement).perform();
         PerformanceManagement.click();
     }
     public void navigateToTraining(){
         act=new Actions(driver);
-        act.moveToElement(starter).build().perform();
+       // act.moveToElement(starter).build().perform();
         act.moveToElement(Training).perform();
         Training.click();
     }
+    public void closeCoockiesPopup(){
+        System.out.println("closing the cockies popup");
+        CLOSE_COOCKIESPOPUP.click();
+    }
 
-
+    public static void closeCoockiesPopupqwe(){
+        System.out.println("closing the cockies popup");
+        //CLOSE_COOCKIESPOPUP.click();
+    }
 
 }

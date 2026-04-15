@@ -6,14 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class lhrAdminstrationSteps {
-    WebDriver driver;
+public class lhrAdminstrationSteps extends BaseClass{
+
        hrpageObjects hrpage;
 
     @Given("user opens HRM website")
     public void user_opens_hrm_website() {
-        driver=new ChromeDriver();
         hrpage=new hrpageObjects(driver);
+        System.out.println("the driver intialized value :"+driver);
         hrpage.openHomePage();
     }
 

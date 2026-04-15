@@ -1,14 +1,10 @@
 package org.hrmWebsiteStepdefinitions;
 
-import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.layout.Document;
-import com.itextpdf.layout.element.Paragraph;
 
 import java.io.FileNotFoundException;
 
 public class pdfGenerator {
-        public static void main(String[] args) {
+       /* public static void main(String[] args) {
             String dest = "simple_document.pdf";
 
             try {
@@ -52,5 +48,5 @@ public class pdfGenerator {
                 e.printStackTrace();
             }
         }
-
+*/
 }

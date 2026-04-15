@@ -1,6 +1,6 @@
 
  Feature: Book a free demo in   HR Page
-   @test1
+   @test12
    Scenario: user able navigate to book demo page
      Given user opens HRM website
      Then user mouse hover on solutions

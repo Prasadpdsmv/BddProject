@@ -10,6 +10,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.time.Duration;
 import java.util.*;
 
 public class forpractice {
@@ -95,7 +96,7 @@ public class forpractice {
         TakesScreenshot screenshot = (TakesScreenshot) driver;
         File f =screenshot.getScreenshotAs(OutputType.FILE);
 
-        WebDriverWait waitfor=new WebDriverWait(driver,60);
+        WebDriverWait waitfor=new WebDriverWait(driver, Duration.ofSeconds(5));
 
         waitfor.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("path")));
 
