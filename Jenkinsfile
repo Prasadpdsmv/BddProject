@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'master',
-                    url: 'https://github.com/yourusername/your-repo.git'
+                    url: 'https://github.com/Prasadpdsmv/BddProject.git'
             }
         }
 
